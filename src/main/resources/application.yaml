@@ -1,0 +1,36 @@
+spring:
+  application.name: watson-connector
+  profiles:
+    active: development
+
+server.port: 8081
+
+logging:
+  level:
+    root: INFO
+    com.example.springbootwatsonconnector: DEBUG
+
+---
+
+spring:
+  profiles: development
+
+watson:
+  assistant:
+    assistantId: <assistant_id>
+    apiKey: <api_key>
+    versionDate: 2019-02-28
+    serviceURL: https://gateway-lon.watsonplatform.net/assistant/api
+    sessionTimeout: 300000
+---
+
+spring:
+  profiles: test
+
+watson:
+  assistant:
+    assistantId: <assistant_id>
+    apiKey: <api_key>
+    versionDate: 2019-02-28
+    serviceURL: https://gateway-lon.watsonplatform.net/assistant/api
+    sessionTimeout: 300000
